@@ -105,16 +105,19 @@ const moviesController = {
            res.render("moviesDelete", {movie})
          })
         })
+        .catch(err=>console.log(err))   
     },
 
     destroy: function (req, res) {  
         db.Movie.destroy({
             where: {
                 id: req.params.id
-         },
-        });
+         }
+         .then(movies => {
             res.redirect('/moviesDelete', {movies})
-        } 
-    }
+        })         
+        }) 
+        .catch(err=>console.log(err))  
+    }}
 
    module.exports = moviesController;
