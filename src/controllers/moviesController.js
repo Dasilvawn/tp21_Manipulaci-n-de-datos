@@ -53,6 +53,7 @@ const moviesController = {
     },
 
     create: function (req, res) { 
+    // return res.sen(req.body)
        
         const {title,release_date,awards,length,rating,genre} =req.body;
        db.Movie.create({
@@ -76,7 +77,9 @@ const moviesController = {
         .catch(err =>console.log(err))
     },
 
-    update: function (req,res) {  
+    update: function (req,res) { 
+    
+        const { title, release_date, awards, length, rating, genre } = req.body; 
        db.Movie.update({
         title: req.body.title,
         release_date: req.body.release_date,
@@ -118,6 +121,6 @@ const moviesController = {
         })         
         }) 
         .catch(err=>console.log(err))  
-    }}
+    } }
 
    module.exports = moviesController;

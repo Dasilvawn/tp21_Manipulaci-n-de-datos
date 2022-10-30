@@ -12,7 +12,7 @@ router.get('/movies/detail/:id', moviesController.detail);
 router.get('/movies/add', moviesController.add);
 router.post('/movies/create', moviesController.create); //ruta que procesa la info
 router.get('/movies/edit/:id', moviesController.edit); //muestra el formulario
-router.put('/movies/update/:id', moviesController.update); //permite actualizar
+router.post('/movies/update/:id', moviesController.update); //permite actualizar
 router.get('/movies/delete/:id', moviesController.delete); //mustra pantalla intermedia
 router.delete('/movies/delete/:id', moviesController.destroy); // borra la pantalla
 
